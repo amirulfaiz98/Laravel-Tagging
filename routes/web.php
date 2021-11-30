@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::resource('posts', PostController::class)->except(['create', 'edit', 'update', 'destroy']);
+Route::get('/show-post', [App\Http\Controllers\PostController::class, 'index']);
+Route::post('/create-post', [App\Http\Controllers\PostController::class, 'store']);
